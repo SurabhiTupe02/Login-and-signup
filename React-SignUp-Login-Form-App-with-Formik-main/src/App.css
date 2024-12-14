@@ -1,0 +1,200 @@
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd);
+  background-size: 400% 400%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: gradientShift 10s ease infinite;
+}
+
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.form-container {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  padding: 30px;
+  text-align: center;
+}
+
+.form-container.dark-mode {
+  background: #1e1e1e;
+  color: white;
+}
+.form-container .toggle-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.form-container .toggle-buttons button {
+  flex: 1;
+  background: linear-gradient(135deg, #003d99, #0072ff);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.form-container .toggle-buttons button.inactive {
+  background: #e5e5e5;
+  color: #333;
+}
+
+.form-container input[type='text'],
+.form-container input[type='email'],
+.form-container input[type='password'] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container input[type='text']:focus,
+.form-container input[type='email']:focus,
+.form-container input[type='password']:focus {
+  border-color: #3399ff;
+  box-shadow: 0 0 8px rgba(51, 153, 255, 0.3);
+  outline: none;
+}
+
+.form-container button.submit-btn {
+  background: linear-gradient(135deg, #003d99, #0072ff);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.form-container button.submit-btn:hover {
+  background: linear-gradient(135deg, #0052cc, #3399ff);
+  transform: scale(1.05);
+}
+
+.form-container a {
+  color: #0072ff;
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+  margin-top: 10px;
+}
+
+.form-container a:hover {
+  text-decoration: underline;
+}
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #0072ff;
+}
+
+.input-icon input {
+  padding-left: 35px;
+}
+
+
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+
+.password-strength {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.password-strength.weak {
+  color: #dc3545;
+}
+
+.password-strength.medium {
+  color: #ffc107;
+}
+
+.password-strength.strong {
+  color: #28a745;
+}
+
+
+.error-message {
+  color: #dc3545;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+
+@media (max-width: 500px) {
+  .form-container {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+
+body.dark-mode {
+  background: linear-gradient(135deg, #121212, #333);
+  color: white;
+}
